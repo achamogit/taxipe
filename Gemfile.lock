@@ -37,8 +37,14 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.3.1)
+      execjs
+      json
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.1)
     coffee-rails (4.1.1)
@@ -55,6 +61,7 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     i18n (0.7.0)
     jbuilder (2.4.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -71,16 +78,27 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
+<<<<<<< HEAD
+    libv8 (3.3.10.4)
+=======
     libv8 (3.16.14.13)
+>>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    metaclass (0.0.4)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.11.2)
+<<<<<<< HEAD
     mysql2 (0.3.20)
+=======
+    nifty-generators (0.4.6)
+>>>>>>> 3ed2c6477a966f8e2696004337eba6e8ae331010
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     rack (1.6.4)
@@ -134,9 +152,18 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+<<<<<<< HEAD
+=======
+    sqlite3 (1.3.11)
+<<<<<<< HEAD
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
+=======
+>>>>>>> 3ed2c6477a966f8e2696004337eba6e8ae331010
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
+>>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -162,18 +189,33 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.3.0)
   byebug
   coffee-rails (~> 4.1.0)
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
+<<<<<<< HEAD
   mysql2 (~> 0.3.20)
+=======
+  mocha
+  nifty-generators
+>>>>>>> 3ed2c6477a966f8e2696004337eba6e8ae331010
   rails (= 4.2.5)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   simple_form
   spring
+<<<<<<< HEAD
+=======
+  sqlite3
+<<<<<<< HEAD
+  therubyracer (~> 0.10.2)
+=======
+>>>>>>> 3ed2c6477a966f8e2696004337eba6e8ae331010
   therubyracer
+>>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
