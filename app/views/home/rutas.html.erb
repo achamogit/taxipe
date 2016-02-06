@@ -1,0 +1,89 @@
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="https://hpneo.github.io/gmaps/gmaps.js"></script>
+  <script type="text/javascript" src="https://hpneo.github.io/gmaps/prettify/prettify.js"></script>
+
+  <!--
+ 
+ 
+ 
+ 
+  <link href='https://hpneo.github.io/gmaps/prettify/prettify.css' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" type="text/css" href="https://hpneo.github.io/gmaps/examples/examples.css" />
+ -->
+ 
+  
+  <script type="text/javascript">
+    var map;
+    $(document).ready(function(){
+      prettyPrint();
+      map = new GMaps({
+        div: '#tmap',
+        lat: -12.097028,
+        lng: -77.024316
+      });
+      map.drawRoute({
+        origin: [-12.097028, -77.024316],
+        destination: [-11.956457, -76.734915],
+        travelMode: 'driving',
+        strokeColor: '#cc0000',
+        strokeOpacity: 0.6,
+        strokeWeight: 6
+      });
+    });
+  </script>
+</head>
+<body>
+  
+  <center>
+      <div class="table-responsive">  
+      <table class="table">
+        <tr>
+          <td>
+            <div class="rareag mg5" align="center">
+              <img src="https://cloud.githubusercontent.com/assets/16651024/12868523/54fadffa-ccd6-11e5-8f4e-1c9e2527193f.png" />
+              <h3>Rutas</h3>
+              <br class="cb">
+            </div>  
+          </td>
+          <td>          
+            <div class="mg5">
+              <h3>
+                <span class="text-primary">Tarifas</span>
+              </h3>
+              <h4>Muestra rutas establecidas en Google<br> Maps para aproximar costos por zona</h4>
+              <h5>https://hpneo.github.io/gmaps/examples/routes.html</h5>
+            </div>
+          </td>
+          <td>        
+            <div class="span6 mg5">
+              <p class="text-primary">para estimar costos se tomara como referencia la <span class="label label-primary">distancia</span> de A->B, las <span class="label label-primary">tarifas</span> tendrán un costo de acuerdo a la <span class="label label-primary">ruta</span></p>
+              <span class="label label-warning">hay un caso especial y es el de multiples rutas o por recorrido adicional</span>
+              <p>With GMaps.js you can draw a route between two points this way:</p>
+              <pre class="prettyprint">map.drawRoute({
+                origin: [-12.097028, -77.024316],
+                destination: [-11.956457, -76.734915],
+                travelMode: 'driving',
+                strokeColor: '#131540',
+                strokeOpacity: 0.6,
+                strokeWeight: 6
+              });</pre>
+              <p>You must define two points (<strong>origin</strong> and <strong>destination</strong>) and color, opacity and weight of the route in the map.</p>
+              <p>Also, you can define a <code>travelMode</code>: <code>driving</code>, <code>bicycling</code> or <code>walking</code>. Default is <code>walking</code></p>
+            </div>    
+          </td>
+                
+    </table>
+    </div>
+  
+  <br class="cb">
+  <hr>
+
+  
+      <div id="tmap" class="geomap"></div>
+  </center>  
+
+
+
+      <%= link_to "Back", :back, class: "btn btn-primary" %>

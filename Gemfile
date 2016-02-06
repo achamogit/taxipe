@@ -6,7 +6,7 @@ gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -46,6 +46,22 @@ group :development do
 end
 
 
-gem 'less-rails'
+#gem 'less-rails'
 
-gem 'twitter-bootstrap-rails'
+
+# Gemfile
+group :assets do
+  # ... 
+  gem 'therubyracer', '~> 0.10.2'
+  gem 'less-rails'
+  gem 'twitter-bootstrap-rails'
+end
+
+    gem 'bootstrap-sass',       '~> 3.3.0'
+    gem 'sass-rails',           '>= 3.2'
+    
+    gem 'gmaps4rails'
+    
+gem "nifty-generators", :group => :development    
+
+gem 'mocha', group: :test

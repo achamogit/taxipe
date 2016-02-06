@@ -13,3 +13,135 @@
  *= require_tree .
  *= require_self
  */
+
+.cb {clear:both;}
+.pd5 {padding:5px;}
+.mg5 {margin:5px;}
+html, body {height: 100%;}
+
+    .google-maps {
+        position: relative;
+        padding-bottom: 75%; /* This is the aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+#geolocation, .geomap {
+   width:90%;     
+   height: 400px;
+   border-radius: 16px 16px;
+   border-color: #fff;
+   border-style: solid;
+   box-shadow: 2px 2px 10px #B1B1B1;
+   margin-top: 25px;
+   border-width: 7px;
+ }    
+ 
+#sidebar_container1 {
+   width:90%;     
+   height: 100px;
+   overflow-y:auto;
+   border-radius: 16px 16px;
+   border-color: #fff;
+   border-style: solid;
+   box-shadow: 2px 2px 10px #B1B1B1;
+   margin-top: 25px;
+   border-width: 7px;
+ }    
+ 
+ .rarea{
+   border-radius: 16px 16px;
+   border-color: #fff;
+   border-style: solid;
+   box-shadow: 2px 2px 10px #B1B1B1;
+   margin-top: 25px;
+   border-width: 7px;     
+     
+ }
+ 
+  .rareag{
+   border-radius: 5px 5px;
+   border-color: #f3f3f3;
+   border-style: solid;
+   /*box-shadow: 2px 2px 10px #B1B1B1;*/
+   /*margin-top: 25px;*/
+   border-width: 2px;     
+     
+ }
+ 
+  .rarean{
+   border-radius: 5px 5px;
+   border-color: #000;
+   border-style: solid;
+   /*box-shadow: 2px 2px 10px #B1B1B1;*/
+   /*margin-top: 25px;*/
+   border-width: 2px;     
+     
+ } 
+ 
+ 
+ 
+ 
+.popin{
+  background:#fff;
+  padding:15px;
+  box-shadow: 0 0 20px #999;
+  border-radius:2px;
+}
+
+ul.gallery{
+  list-style:none;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+ul.gallery li{
+  font-family:'Droid Sans';
+  display:inline-block;
+  width:30%;
+  background:#fff;
+  padding:10px 8px;
+  margin:4px 1px;
+  border-radius:3px;
+  border:solid 1px #ddd;
+}
+ul.gallery li:hover{
+  background:#f3f3f3;
+}
+ul.gallery li a{
+  display:block;
+}
+ul.gallery li h5{
+  font-weight:normal;
+  margin:0;
+  font-size:16px;
+}
+
+#0map,
+#panorama {
+  height:300px;
+  background:#6699cc;
+}
+
+#sponsors {
+  font-size: 12px;
+  text-align: center;
+  padding: 4px 6px;
+}
+
+#sponsors img {
+  height: 40px;
+  margin: 4px;
+}
+
+code {
+  font-family: 'Ubuntu Mono', 'Monaco', 'Andale Mono', 'Courier New', monospace;
+  font-weight: bold;
+}
