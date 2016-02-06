@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,6 +45,7 @@ group :development do
   gem 'spring'
 end
 
+<<<<<<< HEAD
 
 #gem 'less-rails'
 
@@ -65,3 +66,9 @@ end
 gem "nifty-generators", :group => :development    
 
 gem 'mocha', group: :test
+=======
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'simple_form'
+>>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e

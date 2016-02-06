@@ -78,7 +78,11 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
+<<<<<<< HEAD
     libv8 (3.3.10.4)
+=======
+    libv8 (3.16.14.13)
+>>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -122,6 +126,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.5.0)
     rdoc (4.2.1)
+    ref (2.0.0)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -132,6 +137,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     spring (1.6.2)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -141,8 +149,14 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
+<<<<<<< HEAD
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
+=======
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
+>>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -180,13 +194,15 @@ DEPENDENCIES
   rails (= 4.2.5)
   sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
+  simple_form
   spring
   sqlite3
+<<<<<<< HEAD
   therubyracer (~> 0.10.2)
+=======
+  therubyracer
+>>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-
-BUNDLED WITH
-   1.11.2
