@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
     get 'home/geoget'
     get 'home/rutas'
+    get 'home/prototipo1'    
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

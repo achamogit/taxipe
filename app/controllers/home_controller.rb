@@ -8,6 +8,9 @@ class HomeController < ApplicationController
   def rutas
   end
   
+  def protipo1
+  end  
+  
   #def show
    #    render "home/#{params[:id]}"
   #end
