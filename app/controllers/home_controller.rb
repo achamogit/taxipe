@@ -12,6 +12,9 @@ class HomeController < ApplicationController
   
   def protipo1
   end  
+
+  def cp000_arq
+  end 
   
   def cp000
   end 
