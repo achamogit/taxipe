@@ -16,6 +16,18 @@ class HomeController < ApplicationController
   def cp000
   end 
   
+  def cp000_pbi
+  end 
+  
+  def cp000_todo
+  end   
+  
+  def cp000_inprogress
+  end     
+  
+  def cp000_done
+  end   
+  
   def cp001
   end   
   

@@ -14,9 +14,10 @@ Rails.application.routes.draw do
     get 'home/rutas'
     get 'home/prototipo1'
     get 'home/cp000'    
-    
-    
-    
+    get 'home/cp000_pbi'    
+    get 'home/cp000_todo'     
+    get 'home/cp000_inprogress'
+    get 'home/cp000_done'     
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
