@@ -1,6 +1,7 @@
 ******
 TaxiPe (ENE/FEB)
 ******
+![Administrador](https://raw.githubusercontent.com/achamogit/taxipe/master/app/assets/images/admin.png)
 
 ver avances:
 Alfredo
