@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'mysql2', '~> 0.3.20'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+#gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,7 +45,6 @@ group :development do
   gem 'spring'
 end
 
-<<<<<<< HEAD
 
 #gem 'less-rails'
 
@@ -53,22 +52,18 @@ end
 # Gemfile
 group :assets do
   # ... 
-  gem 'therubyracer', '~> 0.10.2'
+  #gem 'therubyracer', '~> 0.10.2'
+  gem 'therubyracer', platforms: :ruby
   gem 'less-rails'
   gem 'twitter-bootstrap-rails'
 end
 
-    gem 'bootstrap-sass',       '~> 3.3.0'
-    gem 'sass-rails',           '>= 3.2'
-    
-    gem 'gmaps4rails'
+gem 'bootstrap-sass',       '~> 3.3.0'
+gem 'sass-rails',           '>= 3.2'
+
+gem 'gmaps4rails'
     
 gem "nifty-generators", :group => :development    
 
 gem 'mocha', group: :test
-=======
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
 gem 'simple_form'
->>>>>>> f794e51c936d9d4d9b267725c71b22fe0137d33e
