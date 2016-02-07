@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   #layout 'internal'
+
   def index
   end
   
@@ -8,6 +9,23 @@ class HomeController < ApplicationController
   
   def rutas
   end
+  
+  def protipo1
+  end  
+  
+  def cp000
+  end 
+  
+  def cp001
+  end   
+  
+  def cp002
+  end   
+  
+  def cp003
+  end 
+  
+  
   
   #def show
    #    render "home/#{params[:id]}"

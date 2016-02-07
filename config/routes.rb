@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+    
   get 'home/index'
 
   resources :modulos
@@ -10,6 +12,11 @@ Rails.application.routes.draw do
   
     get 'home/geoget'
     get 'home/rutas'
+    get 'home/prototipo1'
+    get 'home/cp000'    
+    
+    
+    
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
