@@ -18,7 +18,8 @@ Rails.application.routes.draw do
     get 'home/cp000_todo'     
     get 'home/cp000_inprogress'
     get 'home/cp000_done'    
-    get 'home/cp000_arq'        
+    get 'home/cp000_arq'  
+    get 'home/cp000_mod'      
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

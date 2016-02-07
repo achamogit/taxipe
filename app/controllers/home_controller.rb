@@ -16,6 +16,9 @@ class HomeController < ApplicationController
   def cp000_arq
   end 
   
+  def cp000_mod
+  end   
+  
   def cp000
   end 
   
