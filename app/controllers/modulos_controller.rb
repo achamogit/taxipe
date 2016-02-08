@@ -1,4 +1,5 @@
 class ModulosController < ApplicationController
+  layout 'internal'
   before_action :set_modulo, only: [:show, :edit, :update, :destroy]
 
   # GET /modulos

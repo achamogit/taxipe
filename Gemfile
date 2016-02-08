@@ -50,13 +50,13 @@ end
 
 
 # Gemfile
-group :assets do
+#group :assets do
   # ... 
   #gem 'therubyracer', '~> 0.10.2'
   gem 'therubyracer', platforms: :ruby
   gem 'less-rails'
   gem 'twitter-bootstrap-rails'
-end
+#end
 
 gem 'bootstrap-sass',       '~> 3.3.0'
 gem 'sass-rails',           '>= 3.2'
