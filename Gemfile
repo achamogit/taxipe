@@ -42,7 +42,8 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
+  gem 'spring', '~> 1.6', '>= 1.6.3'
 end
 
 
@@ -67,3 +68,7 @@ gem "nifty-generators", :group => :development
 
 gem 'mocha', group: :test
 gem 'simple_form'
+
+gem 'railties', '~> 4.2', '>= 4.2.5'
+
+gem 'rack', '~> 1.6', '>= 1.6.4'
