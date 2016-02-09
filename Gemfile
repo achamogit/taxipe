@@ -56,7 +56,7 @@ end
   #gem 'therubyracer', '~> 0.10.2'
   gem 'therubyracer', platforms: :ruby
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails', '<= 3.2.0'
 #end
 
 gem 'bootstrap-sass',       '~> 3.3.0'
