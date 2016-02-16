@@ -43,6 +43,9 @@ class HomeController < ApplicationController
   def cp003
   end 
   
+  def ayuda
+    
+  end  
   
   
   #def show
