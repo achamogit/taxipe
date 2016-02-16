@@ -45,14 +45,27 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">TaxiPE</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <table>
+        <tr>
+            <td>
+                <a class="navbar-brand" href="#">TaxiPE</a>
+            </td>
+            <td>
+              <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to image_tag('client.png', width: '50', alt: "Client"), "/path1"  %></li>
+            <li><%= link_to image_tag('driver.png', width: '35', alt: "Driver"), "/path2"  %></li>
+            <li><%= link_to image_tag('user.png', width: '35', alt: "User"), "/path3"  %></li>
+            <li><%= link_to image_tag('vehiculos.png', width: '40', alt: "Vehicle"), "/path4"  %></li>
+            <li><%= link_to image_tag('modulos.png', width: '35', alt: "Module"), modulos_path  %></li>
+            <li><%= link_to image_tag('perfiles.png', width: '35', alt: "Perfiles"), profiles_path  %></li>
+
           </ul>
         </div>
+            </td>
+        </tr>
+      </table>  
+        
       </div>
     </div>
 
@@ -67,16 +80,16 @@
             <h3>Sidebar</h3>
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to image_tag('modulos_add.png', width: '35'), "/path5"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
-
+      <br><br>
       <footer>
-        <p>&copy; Company 2016</p>
+        <p>RunningCorp 2016</p>
       </footer>
 
     </div> <!-- /container -->

@@ -1,5 +1,13 @@
 <%- model_class = Modulo -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+    <table>
+        <tr>
+            <td  style="width:60px"><img src="<%= asset_path 'modulos.png' %>" alt="" style="width:50px"></td>
+            <td>
+                <h1>New Modules<h1>
+                <%#=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %>
+            </td>
+        </tr>
+  </table>  
 </div>
 <%= render :partial => 'form' %>

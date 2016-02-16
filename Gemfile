@@ -51,13 +51,13 @@ end
 
 
 # Gemfile
-group :assets do
+#group :assets do
   # ... 
   #gem 'therubyracer', '~> 0.10.2'
   gem 'therubyracer', platforms: :ruby
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
-end
+  gem 'twitter-bootstrap-rails', '<= 3.2.0'
+#end
 
 gem 'bootstrap-sass',       '~> 3.3.0'
 gem 'sass-rails',           '>= 3.2'
@@ -72,7 +72,10 @@ gem 'simple_form'
 gem 'railties', '~> 4.2', '>= 4.2.5'
 
 gem 'rack', '~> 1.6', '>= 1.6.4'
+<<<<<<< HEAD
 
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+=======
+>>>>>>> 6f281eaf4042725a37040cafacc1e3ba5f81e4eb
