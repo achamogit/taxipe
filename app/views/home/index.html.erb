@@ -1,7 +1,55 @@
+  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+<%= link_to :home_ayuda, class: "pull-right btn btn-info mg5" do %>
+    <span class="glyphicon glyphicon-exclamation-sign"></span>
+<% end %>
 
 <%= link_to :back, class: "pull-right btn btn-warning mg5" do %>
     <span class="glyphicon glyphicon-flag"></span>
 <% end %>
+
+
+<div class="container">
+  <h2>Dynamic Tabs with jQuery</h2>
+  <p>Click on the Tabs to display the active and previous tab.</p>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#home">Home</a></li>
+    <li><a href="#menu1">Menu 1</a></li>
+    <li><a href="#menu2">Menu 2</a></li>
+    <li><a href="#menu3">Menu 3</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+    <hr>
+    <p class="act"><b>Active Tab</b>: <span></span></p>
+    <p class="prev"><b>Previous Tab</b>: <span></span></p>
+</div>
+
+
+
+
 
 
 <div class="jumbotron">
@@ -34,7 +82,7 @@
    <span class="label label-success" id="re2">resulta2</span>
    <br class="cb">  
    <span class="label label-primary" id="re3">resulta3</span>
-   
+   <span class="label label-info" id="re4">resulta4</span>   
         <div id="geolocation"></div>
   
      
@@ -67,20 +115,28 @@ function HaversineInKM(lat1, long1, lat2, long2)
 var meLat = -12.091300;
 var meLong = -77.077000;
 
+var endLat = -12.023606551621132;
+var endLong = -76.88665313700812;
 
 var result1 = HaversineInKM(meLat, meLong, -12.097028, -77.024316);
 var result2 = HaversineInKM(meLat, meLong, -11.956457, -76.734915);
 var result3 = HaversineInKM(-11.956457, -76.734915, -12.023606551621132, -76.88665313700812);
-
+var result4 = HaversineInKM(meLat, meLong, endLat, endLong);
 
 
     result1 = result1.toFixed(2)+'km';
     result2 = result2.toFixed(2)+'km'; 
     result3 = result3.toFixed(2)+'km'; 
+    result4 = result4.toFixed(2)+'km'; 
+    
     
 $('#re1').html('A->PCM: '+result1);
 $('#re2').html('A->CH: '+result2);
 $('#re3').html('PCM->STACLA: '+result3);
+$('#re4').html('A->STACLA: '+result4);
+
+
+
 
     /*  -------------------   */
 
@@ -93,8 +149,12 @@ $('#re3').html('PCM->STACLA: '+result3);
     // -12.097028, -77.024316
     
     
-      var origin      = new google.maps.LatLng(-12.091300, -77.077000);
-      var destination = new google.maps.LatLng(-12.097028, -77.024316);
+      var origin      = new google.maps.LatLng(meLat, meLong);
+      // var destination = new google.maps.LatLng(-12.097028, -77.024316);
+      var destination = new google.maps.LatLng(endLat, endLong);
+      
+      
+      
       var request = {
           origin:      origin,
           destination: destination,
@@ -134,4 +194,18 @@ $('#re3').html('PCM->STACLA: '+result3);
     };
 */           
     
+</script>
+
+<script>
+$(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+    $('.nav-tabs a').on('shown.bs.tab', function(event){
+        var x = $(event.target).text();         // active tab
+        var y = $(event.relatedTarget).text();  // previous tab
+        $(".act span").text(x);
+        $(".prev span").text(y);
+    });
+});
 </script>

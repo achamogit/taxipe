@@ -72,3 +72,10 @@ gem 'simple_form'
 gem 'railties', '~> 4.2', '>= 4.2.5'
 
 gem 'rack', '~> 1.6', '>= 1.6.4'
+<<<<<<< HEAD
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+=======
+>>>>>>> 6f281eaf4042725a37040cafacc1e3ba5f81e4eb
