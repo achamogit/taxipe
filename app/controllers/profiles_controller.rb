@@ -1,16 +1,27 @@
 class ProfilesController < ApplicationController
   layout 'internal'
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :addmodule]
 
+  # GET /addmodule_profiles
+  def addmodule
+   @varmodulos = Modulo.all
+   @module_profiles = ModuleProfile.where("idperfil=" + params[:id])
+   @module_profiles.each do |module_profile|
+     @varmodulos.find(5)
+   end
+  end
+  
   # GET /profiles
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @states = State.all
   end
 
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @module_profiles = ModuleProfile.all
   end
 
   # GET /profiles/new
@@ -20,6 +31,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    @module_profiles = ModuleProfile.where("idperfil=" + params[:id])
+    @cont_module_profile = ModuleProfile.where("idperfil=" + params[:id]).count
   end
 
   # POST /profiles

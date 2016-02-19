@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160208032222) do
-=======
-ActiveRecord::Schema.define(version: 20160206214816) do
->>>>>>> 93e1c95c8192762f30d9718c2de605c1e71080b9
+ActiveRecord::Schema.define(version: 20160215192704) do
+
+  create_table "module_profiles", force: :cascade do |t|
+    t.integer  "idmodulo",   limit: 4
+    t.integer  "idperfil",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "modulo_perfils", force: :cascade do |t|
+    t.integer  "idmodulo",   limit: 4
+    t.integer  "idperfil",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "modulos", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -24,7 +34,6 @@ ActiveRecord::Schema.define(version: 20160206214816) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
-<<<<<<< HEAD
 
   create_table "profiles", force: :cascade do |t|
     t.text     "name",       limit: 65535
@@ -32,7 +41,11 @@ ActiveRecord::Schema.define(version: 20160206214816) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
-=======
->>>>>>> 93e1c95c8192762f30d9718c2de605c1e71080b9
+
+  create_table "states", force: :cascade do |t|
+    t.text     "name",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
 end

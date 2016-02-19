@@ -1,0 +1,10 @@
+<%= simple_form_for @module_profiles, :html => { :class => 'form-horizontal' } do |f| %>
+<h1>Profiles#addmodule</h1>
+<p>Find me in app/views/profiles/addmodule.html.erb</p>
+ <label>Assign module</label>
+            <%= f.collection_select :idmodulo, @varmodulos.all, :id, :name,  :class => 'form-control'  %>
+<%= link_to t('.add', :default => t("helpers.links.add")),
+                      edit_profile_path(@profile), :method => :index, :class => 'btn btn-default' %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              edit_profile_path(@profile), :class => 'btn btn-default'  %>
+<% end %>

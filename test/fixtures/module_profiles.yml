@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idmodulo: 1
+  idperfil: 1
+
+two:
+  idmodulo: 1
+  idperfil: 1

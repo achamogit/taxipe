@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  get 'profiles/addmodule'
+
+  resources :module_profiles
+  resources :states
   resources :profiles
+  
+  get 'profiles/:id/addmodule', controller: :profiles, action: :addmodule, as: :addmodule_profiles
 
     
   get 'home/index'
