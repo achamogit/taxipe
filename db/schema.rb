@@ -11,18 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215192704) do
+ActiveRecord::Schema.define(version: 20160219233330) do
 
   create_table "module_profiles", force: :cascade do |t|
     t.integer  "idmodulo",   limit: 4
-    t.integer  "idperfil",   limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  create_table "modulo_perfils", force: :cascade do |t|
-    t.integer  "idmodulo",   limit: 4
-    t.integer  "idperfil",   limit: 4
+    t.integer  "idprofile",  limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end

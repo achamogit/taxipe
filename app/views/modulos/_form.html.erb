@@ -1,11 +1,14 @@
 <%= simple_form_for @modulo, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="form-group">
   <%= f.input :name %>
   <%#= error_span(@modulo[:name]) %>
   <%= f.input :description %>
   <%#= error_span(@modulo[:description]) %>
-  <%= f.input :status %>
+  <label>Estado</label><br>
+  <%= f.collection_select :status, State.all, :id, :name,  :class => 'form-control'  %>
+  <%#= f.input :status %>
   <%#= error_span(@modulo[:status]) %>
-
+  </div>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 modulos_path, :class => 'btn btn-default' %>

@@ -1,6 +1,11 @@
 <%- model_class = Profile -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+ <table>
+    <tr>
+      <td  style="width:60px"><img src="<%= asset_path 'perfiles.png' %>"  style="width:50px"></td>
+      <td><h1>Profiles<h1></td>
+    </tr>
+  </table>
 </div>
 <table class="table table-striped">
   <thead>
@@ -8,7 +13,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%#= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,7 +29,7 @@
            <% end %>
         <% end %> 
         </td>
-        <td><%= profile.created_at %></td>
+        <td><%#= profile.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_profile_path(profile), :class => 'btn btn-default btn-xs' %>

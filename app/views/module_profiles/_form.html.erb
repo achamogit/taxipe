@@ -1,10 +1,14 @@
 <%= simple_form_for @module_profile, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :idmodulo %>
-  <%= error_span(@module_profile[:idmodulo]) %>
-  <%= f.input :idperfil %>
-  <%= error_span(@module_profile[:idperfil]) %>
+  <%#= f.input :idmodulo%>
+  <%#= error_span(@module_profile[:idmodulo]) %>
+  <label>Select Module</label><br>
+  <%= f.collection_select :idmodulo, @varmodulos.all, :id, :name,  :class => 'form-control'  %>
+  <%= f.input :idprofile, :as => :hidden, input_html: { value:   @idprofile }%>
+  <%#= error_span(@module_profile[:idprofile]) %>
+  <div></div>
+  <br>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                module_profiles_path, :class => 'btn btn-default' %>
+                edit_profile_url(@idprofile), :class => 'btn btn-default' %>
 <% end %>

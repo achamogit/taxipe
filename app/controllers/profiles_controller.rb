@@ -4,10 +4,11 @@ class ProfilesController < ApplicationController
 
   # GET /addmodule_profiles
   def addmodule
+   
    @varmodulos = Modulo.all
-   @module_profiles = ModuleProfile.where("idperfil=" + params[:id])
+   @module_profiles = ModuleProfile.where("idprofile=" + params[:id])
    @module_profiles.each do |module_profile|
-     @varmodulos.find(5)
+     @varmodulos.find(module_profile.idmodulo)
    end
   end
   
@@ -27,12 +28,17 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
+    @cont_module_profile = 0
+    @varctrl_vista=0
   end
 
   # GET /profiles/1/edit
   def edit
-    @module_profiles = ModuleProfile.where("idperfil=" + params[:id])
-    @cont_module_profile = ModuleProfile.where("idperfil=" + params[:id]).count
+    @varctrl_vista=1
+    @module_profiles = ModuleProfile.where("idprofile=" + params[:id])
+    @cont_module_profile = ModuleProfile.where("idprofile=" + params[:id]).count
+    @val_module_profile = ModuleProfile.where("idprofile=" + params[:id]).count == Modulo.all.count
+    
   end
 
   # POST /profiles

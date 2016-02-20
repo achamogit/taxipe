@@ -1,11 +1,12 @@
 class ModulosController < ApplicationController
-  layout 'internal'
+    layout 'internal'
   before_action :set_modulo, only: [:show, :edit, :update, :destroy]
 
   # GET /modulos
   # GET /modulos.json
   def index
     @modulos = Modulo.all
+    @states = State.all
   end
 
   # GET /modulos/1
@@ -70,6 +71,7 @@ class ModulosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def modulo_params
+      #params[:modulo]
       params.require(:modulo).permit(:name, :description, :status)
     end
 end

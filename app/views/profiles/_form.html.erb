@@ -1,4 +1,4 @@
-<%= simple_form_for  :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @profile, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= error_span(@profile[:name]) %>
   <%#= f.input :status %>
@@ -8,10 +8,12 @@
   <%= f.collection_select :status, State.all, :id, :name,  :class => 'form-control'  %>
   </div>
   
+  <% if @varctrl_vista == 1 %>
   <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Modules associated</h3>
   </div>
+  
   <div class="panel-body">
               <table class="table table-striped">
               <thead>
@@ -22,6 +24,7 @@
                 </tr>
               </thead>
               <tbody>
+                
                 <% if @cont_module_profile > 0 %>
                 
                 <% @module_profiles.each do |module_profile| %>
@@ -31,11 +34,11 @@
                     </td>
                     <td><%=module_profile.created_at %></td>
                     <td>
-                      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                                  module_profile_path(module_profile),
-                                  :method => :delete,
-                                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                                  :class => 'btn btn-xs btn-danger' %>
+                     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      module_profile_path(module_profile),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
                     </td>
                   </tr>
                 <% end %>
@@ -44,17 +47,18 @@
                         <td >no records associated</td>
                     </tr>        
                 <%end%>
+               
               </tbody>
             </table>
-            <label>Assign module</label>
-            <%= f.collection_select :status, State.all, :id, :name,  :class => 'form-control'  %>
-           <%= link_to "add", addmodule_profiles_path(@profile), method: :addmodule %>
-           <%= link_to t('.add', :default => t("helpers.links.add")), 
+            <%if !@val_module_profile%>
+               <%= link_to t('.Assign module', :default => t("helpers.links.Assign module")), 
                       addmodule_profiles_path(@profile), :class => 'btn btn-default btn-xs' %>
+            <%end%>          
   </div>
+   
 </div>
-  
-  <br><br><br>
+  <%end%>
+  <br>
   
   <%#= error_span(@profile[:status]) %>
   

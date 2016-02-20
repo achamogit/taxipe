@@ -18,7 +18,7 @@ class ModuleProfilesControllerTest < ActionController::TestCase
 
   test "should create module_profile" do
     assert_difference('ModuleProfile.count') do
-      post :create, module_profile: { idmodulo: @module_profile.idmodulo, idperfil: @module_profile.idperfil }
+      post :create, module_profile: { idmodulo: @module_profile.idmodulo, idprofile: @module_profile.idprofile }
     end
 
     assert_redirected_to module_profile_path(assigns(:module_profile))
@@ -35,7 +35,7 @@ class ModuleProfilesControllerTest < ActionController::TestCase
   end
 
   test "should update module_profile" do
-    patch :update, id: @module_profile, module_profile: { idmodulo: @module_profile.idmodulo, idperfil: @module_profile.idperfil }
+    patch :update, id: @module_profile, module_profile: { idmodulo: @module_profile.idmodulo, idprofile: @module_profile.idprofile }
     assert_redirected_to module_profile_path(assigns(:module_profile))
   end
 
