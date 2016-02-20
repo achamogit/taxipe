@@ -5,7 +5,7 @@
    <div class="form-group">
   <%#= f.select(:status, options_for_select([['Active','A'],['Inactive','I']]), :class => 'form-control')%>
   <label>Estado</label><br>
-  <%= f.collection_select :status, State.all, :id, :name,  :class => 'form-control'  %>
+  <%= f.collection_select :status, State.all, :id, :name,  :class => 'select optional form-control'  %>
   </div>
   
   <% if @varctrl_vista == 1 %>

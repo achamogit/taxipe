@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_brand_id: 
+  vehicle_model_id: 
+  placa: MyString
+  year: 1
+  numberseat: 1
+  vehicle_type_id: 
+  state_id: 
+
+two:
+  vehicle_brand_id: 
+  vehicle_model_id: 
+  placa: MyString
+  year: 1
+  numberseat: 1
+  vehicle_type_id: 
+  state_id: 

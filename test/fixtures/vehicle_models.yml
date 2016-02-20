@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  vehicle_brand_id: 
+
+two:
+  name: MyString
+  vehicle_brand_id: 

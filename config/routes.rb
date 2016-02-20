@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :vehicles
+  resources :vehicle_models
+  resources :vehicle_brands
+  resources :vehicle_types
   resources :modulos
   resources :module_profiles
   get 'profiles/addmodule'

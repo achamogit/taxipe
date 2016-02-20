@@ -1,0 +1,22 @@
+<%= simple_form_for @vehicle, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="form-group">
+
+  <%= f.association :vehicle_brand%>
+  <%= error_span(@vehicle[:brand]) %>
+  <%= f.input :placa, input_html: { maxlength: 7 } %>
+  <%= error_span(@vehicle[:placa]) %>
+  <%= f.input :year , collection: 18..70%>
+  <%= error_span(@vehicle[:year]) %>
+  <%= f.association :vehicle_model, :as => :collection_select, collection: VehicleModel.where('vehicle_brand_id <>?', 0) %>
+  <%= error_span(@vehicle[:model]) %>
+  <%= f.input :numberseat , collection: 4..12%>
+  <%= error_span(@vehicle[:numberseat]) %>
+  <%= f.association :vehicle_type %>
+  <%= error_span(@vehicle[:type]) %>
+  <%= f.association :state %>
+</div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                vehicles_path, :class => 'btn btn-default' %>
+                
+<% end %>
