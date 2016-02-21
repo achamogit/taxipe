@@ -1,27 +1,96 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Workspace" %></title>
+    <%= csrf_meta_tags %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-  </div>
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
 
-<h3>Cancel my account</h3>
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <%= javascript_include_tag "application" %>
 
-<%= link_to "Back", :back %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body>
+      
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+       
+        <table border="0">
+        <tr>
+            <td>
+                <a class="navbar-brand" href="#">TaxiPE</a>
+            </td>
+            <td>
+            </td>
+        <td align="right" width="760px"> 
+         <%= link_to t('.Sign out', :default => t("helpers.links.Sign out")), 
+                       destroy_user_session_path, method: :delete, :class => 'btn btn-default btn' %></td>
+        </tr>
+      </table>  
+      
+      </div>
+    </div>
+    <div>
+<div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>  
+            <h2>Edit <%= resource_name.to_s.humanize %></h2>
+            
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= f.error_notification %>
+            
+              <div class="form-inputs">
+                <%= f.input :firstname, :label => "First Name", required: true, autofocus: true %>
+                <%= f.input :lastname, :label => "Last Name", required: true %>
+                <%= f.input :email, required: true %>
+                <%= f.association :profile%>
+                <%= f.association :state %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+            
+                <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+                <%= f.input :password_confirmation, required: false %>
+                <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+              </div>
+            
+              <div class="form-actions">
+                <%= f.button :submit, "Update" , :class => 'btn-primary'%>
+                <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                :root, :class => 'btn btn-default' %>
+                <%= link_to "Cancel my account", registration_path(resource_name), 
+                :class => 'btn btn-danger', 
+                data: { confirm: "Are you sure?" }, method: :delete %></p>
+              </div>
+            <% end %>
+            <br>
+       </div>
+ </div> <!-- /container -->
+
+  </body>
+</html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221004151) do
+ActiveRecord::Schema.define(version: 20160221072756) do
 
   create_table "module_profiles", force: :cascade do |t|
     t.integer  "idmodulo",   limit: 4
@@ -54,6 +54,10 @@ ActiveRecord::Schema.define(version: 20160221004151) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "firstname",              limit: 255
+    t.string   "lastname",               limit: 255
+    t.integer  "profile_id",             limit: 4
+    t.integer  "state_id",               limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

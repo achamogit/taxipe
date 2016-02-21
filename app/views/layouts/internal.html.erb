@@ -47,23 +47,34 @@
         </button>
         <table border="0">
         <tr>
-            <td>
+            <td width="50px">
                 <a class="navbar-brand" href="#">TaxiPE</a>
             </td>
-            <td>
+            <td width="400px">
               <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
+            <%if @setprofileclient%>
             <li><%= link_to image_tag('client.png', width: '50', alt: "Client"), "/path1"  %></li>
+            <%end%>
+            <%if @setprofiledriver%>
             <li><%= link_to image_tag('driver.png', width: '35', alt: "Driver"), "/path2"  %></li>
-            <li><%= link_to image_tag('user.png', width: '35', alt: "User"), "/path3"  %></li>
+            <%end%>
+            <%if @setprofilevehicle%>
             <li><%= link_to image_tag('vehiculos.png', width: '40', alt: "Vehicle"), vehicles_path  %></li>
+            <%end%>
+            <%if @setprofilemodulo%>
             <li><%= link_to image_tag('modulos.png', width: '35', alt: "Module"), modulos_path  %></li>
+            <%end%>
+            <%if @setprofileprofile%>
             <li><%= link_to image_tag('perfiles.png', width: '35', alt: "Perfiles"), profiles_path  %></li>
+            <%end%>
 
           </ul>
         </div>
             </td>
-        <td align="right" width="360px"> 
+        <td align="right" width="365px"> 
+        <%= link_to t('.Profile', :default => t("helpers.links.Profile")), 
+                       edit_user_registration_path, :class => 'btn btn-default btn' %>
          <%= link_to t('.Sign out', :default => t("helpers.links.Sign out")), 
                        destroy_user_session_path, method: :delete, :class => 'btn btn-default btn' %></td>
         </tr>
