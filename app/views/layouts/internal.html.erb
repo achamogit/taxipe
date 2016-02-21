@@ -37,7 +37,7 @@
     <![endif]-->
   </head>
   <body>
-
+      
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -45,7 +45,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <table>
+        <table border="0">
         <tr>
             <td>
                 <a class="navbar-brand" href="#">TaxiPE</a>
@@ -63,12 +63,16 @@
           </ul>
         </div>
             </td>
+        <td align="right" width="360px"> 
+         <%= link_to t('.Sign out', :default => t("helpers.links.Sign out")), 
+                       destroy_user_session_path, method: :delete, :class => 'btn btn-default btn' %></td>
         </tr>
       </table>  
-        
+      
       </div>
     </div>
-
+    <div>
+      
     <div class="container">
       <div class="row">
         <div class="col-lg-9">

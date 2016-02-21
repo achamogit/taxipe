@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :vehicles
   resources :vehicle_models
   resources :vehicle_brands
@@ -13,7 +14,8 @@ Rails.application.routes.draw do
   #get 'profiles/:id/addmodule', controller: :profiles, action: :addmodule, as: :addmodule_profiles
   get 'module_profiles/:id/new', controller: :module_profiles, action: :new, as: :addmodule_profiles
     
-  get 'home/index'
+  #get 'home/index'
+  #root to: "home#index"
 
   resources :modulos
   # The priority is based upon order of creation: first created -> highest priority.

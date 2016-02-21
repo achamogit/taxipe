@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  #layout 'internal'
+  layout 'internal'
+  before_action :authenticate_user!
 
   def index
   end
