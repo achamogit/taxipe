@@ -28,6 +28,9 @@ class VehiclesController < ApplicationController
         if module_profile.idmodulo == 5
           @setprofileprofile = true
         end
+        if module_profile.idmodulo == 6
+          @setprolocalitie = true
+        end
       end
     end
   end

@@ -50,7 +50,7 @@
             <td width="50px">
                 <a class="navbar-brand" href="#">TaxiPE</a>
             </td>
-            <td width="400px">
+            <td width="440px">
               <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <%if @setprofileclient%>
@@ -68,11 +68,14 @@
             <%if @setprofileprofile%>
             <li><%= link_to image_tag('perfiles.png', width: '35', alt: "Perfiles"), profiles_path  %></li>
             <%end%>
+            <%if @setprolocalitie%>
+            <li><%= link_to image_tag('localidad.png', width: '35', alt: "Localidad"), localities_path  %></li>
+            <%end%>
 
           </ul>
         </div>
             </td>
-        <td align="right" width="365px"> 
+        <td align="right" width="325px"> 
         <%= link_to t('.Profile', :default => t("helpers.links.Profile")), 
                        edit_user_registration_path, :class => 'btn btn-default btn' %>
          <%= link_to t('.Sign out', :default => t("helpers.links.Sign out")), 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221105519) do
+ActiveRecord::Schema.define(version: 20160222002502) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20160221105519) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "localities", force: :cascade do |t|
+    t.text     "description", limit: 65535
+    t.integer  "state_id",    limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "localities", ["state_id"], name: "index_localities_on_state_id", using: :btree
 
   create_table "module_profiles", force: :cascade do |t|
     t.integer  "idmodulo",   limit: 4
@@ -134,6 +143,7 @@ ActiveRecord::Schema.define(version: 20160221105519) do
   add_index "vehicles", ["vehicle_model_id"], name: "index_vehicles_on_vehicle_model_id", using: :btree
   add_index "vehicles", ["vehicle_type_id"], name: "index_vehicles_on_vehicle_type_id", using: :btree
 
+  add_foreign_key "localities", "states"
   add_foreign_key "vehicle_models", "vehicle_brands"
   add_foreign_key "vehicles", "states"
   add_foreign_key "vehicles", "vehicle_brands"

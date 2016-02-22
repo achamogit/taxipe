@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :localities
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
