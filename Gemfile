@@ -79,4 +79,4 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem 'devise'
 gem 'rails_admin'
 gem 'activeadmin', '~> 1.0.0.pre2'
-
+gem "paperclip", "~> 4.2"

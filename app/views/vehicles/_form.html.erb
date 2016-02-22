@@ -5,7 +5,7 @@
   <%= error_span(@vehicle[:brand]) %>
   <%= f.input :placa, input_html: { maxlength: 7 } %>
   <%= error_span(@vehicle[:placa]) %>
-  <%= f.input :year , collection: 18..70%>
+  <%= f.input :year%>
   <%= error_span(@vehicle[:year]) %>
   <%= f.association :vehicle_model, :as => :collection_select, collection: VehicleModel.where('vehicle_brand_id <>?', 0) %>
   <%= error_span(@vehicle[:model]) %>

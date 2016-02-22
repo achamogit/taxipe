@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222002502) do
+ActiveRecord::Schema.define(version: 20160222012118) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -45,6 +45,27 @@ ActiveRecord::Schema.define(version: 20160222002502) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "drivers", force: :cascade do |t|
+    t.string   "firstname",          limit: 255
+    t.string   "lastname",           limit: 255
+    t.integer  "age",                limit: 4
+    t.date     "datebirthday"
+    t.string   "document",           limit: 255
+    t.string   "license",            limit: 255
+    t.integer  "yearexperience",     limit: 4
+    t.integer  "phone",              limit: 4
+    t.integer  "state_id",           limit: 4
+    t.integer  "rating",             limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
+
+  add_index "drivers", ["state_id"], name: "index_drivers_on_state_id", using: :btree
 
   create_table "localities", force: :cascade do |t|
     t.text     "description", limit: 65535
@@ -143,6 +164,7 @@ ActiveRecord::Schema.define(version: 20160222002502) do
   add_index "vehicles", ["vehicle_model_id"], name: "index_vehicles_on_vehicle_model_id", using: :btree
   add_index "vehicles", ["vehicle_type_id"], name: "index_vehicles_on_vehicle_type_id", using: :btree
 
+  add_foreign_key "drivers", "states"
   add_foreign_key "localities", "states"
   add_foreign_key "vehicle_models", "vehicle_brands"
   add_foreign_key "vehicles", "states"

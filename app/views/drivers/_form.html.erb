@@ -1,0 +1,37 @@
+<%= simple_form_for @driver, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :firstname, :label => "First Name" , required: true %>
+  <%= error_span(@driver[:firstname]) %>
+  <%= f.input :lastname, :label => "Last Name"  , required: true%>
+  <%= error_span(@driver[:lastname]) %>
+  <%= f.input :age  , collection: 18..70%>
+  <%= error_span(@driver[:age]) %>
+  <%= f.input :datebirthday, :label => "Date birthday" , as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 18,
+                              order: [:day, :month, :year] , required: true%>
+  <%= error_span(@driver[:datebirthday]) %>
+  <%= f.input :document , required: true%>
+  <%= error_span(@driver[:document]) %>
+  <%= f.input :license , required: true%>
+  <%= error_span(@driver[:license]) %>
+  <%= f.input :yearexperience, :label => "Year experience"  %>
+  <%= error_span(@driver[:yearexperience]) %>
+  <%= f.input :phone %>
+  <%= error_span(@driver[:phone]) %>
+  <%= f.association :state %>
+  <%= f.input :rating %>
+  <%= error_span(@driver[:rating]) %>
+  <%= f.input :image, as: :file , :label => "Photo"  %>
+
+  <%#= f.input :image_file_name %>
+  <%#= error_span(@driver[:image_file_name]) %>
+  <%#= f.input :image_content_type %>
+  <%#= error_span(@driver[:image_content_type]) %>
+  <%#= f.input :image_file_size %>
+  <%#= error_span(@driver[:image_file_size]) %>
+  <%#= f.input :image_updated_at %>
+  <%#= error_span(@driver[:image_updated_at]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                drivers_path, :class => 'btn btn-default' %>
+<% end %>
